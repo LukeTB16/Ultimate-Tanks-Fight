@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>UTF</groupId>
+  <artifactId>UTF</artifactId>
+  <version>1.0.0</version>
+  <name>Ultimate Tanks Fight</name>
+  <description>Local multiplayer game, fight against your friends!</description>
+  <properties>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  	<apache.commons.io.version>2.7</apache.commons.io.version>
+  	<dyn4j.version>4.1.4</dyn4j.version>
+  </properties>
+  
+  <dependencies>
+      <!-- Apache Commons IO -->
+      <dependency>
+      	<groupId>commons-io</groupId>
+      	<artifactId>commons-io</artifactId>
+      	<version>${apache.commons.io.version}</version>
+      </dependency>
+  	  
+  	  <!--  Dyn4j  -->	
+      <dependency>
+	    <groupId>org.dyn4j</groupId>
+	    <artifactId>dyn4j</artifactId>
+	    <version>4.1.4</version>
+	  </dependency>
+  </dependencies>
+  
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+      	<artifactId>maven-assembly-plugin</artifactId>
+      	<configuration>
+      		<archive>
+      			<manifest>
+      				<mainClass>game.UTF</mainClass>
+      			</manifest>
+      		</archive>
+      		<descriptorRefs>
+      			<descriptorRef>jar-with-dependencies</descriptorRef>
+      		</descriptorRefs>
+      	</configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
